@@ -1,0 +1,50 @@
+@import '~assets/styles/vars';
+
+.root {
+  align-items: flex-start;
+  display: flex;
+  padding: 33px 40px;
+
+  .title {
+    color: $primary-color;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .password .title {
+    margin-bottom: 21px;
+  }
+
+  .history {
+    margin-left: 152px;
+
+    .title {
+      margin-bottom: 44px;
+    }
+  }
+
+  @media screen and (max-width: $xl) {
+    .title {
+      font-size: 16px;
+    }
+
+    .history {
+      .title {
+        margin-bottom: 21px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    padding: 30px 20px;
+
+    flex-direction: column;
+
+    .history {
+      margin-left: 0;
+      margin-top: 50px;
+
+    }
+  }
+}

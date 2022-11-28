@@ -1,0 +1,94 @@
+@import '~assets/styles/vars';
+
+.root {
+  display: inline-block;
+  position: relative;
+
+  .input {
+    padding-left: 52px !important;
+
+    &::before {
+      background-image: url("#{$images-path}/icons/calendar.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 16px;
+      position: absolute;
+      top: 0;
+      width: 22px;
+    }
+  }
+
+  .picker {
+    border-radius: $border-radius * 0.5;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+
+    :global {
+      .rdrDefinedRangesWrapper,
+      .rdrDateDisplayWrapper {
+        display: none;
+      }
+
+      .rdrCalendarWrapper {
+        background-color: $advanced-color;
+
+        .rdrDay .rdrDayNumber,
+        .rdrMonthName,
+        .rdrWeekDay {
+          font-weight: 600;
+        }
+
+        .rdrMonthName,
+        .rdrWeekDay,
+        .rdrMonthAndYearPickers select {
+          color: $body-color;
+        }
+
+        .rdrStartEdge,
+        .rdrEndEdge,
+        .rdrInRange {
+          color: $body-color !important;
+        }
+
+        .rdrDayDisabled {
+          background-color: rgba(0, 0, 0, 0);
+
+          .rdrDayNumber span {
+            color: $body-color;
+            opacity: 0.35;
+          }
+        }
+
+        .rdrNextPrevButton {
+          background-color: $body-color;
+
+          i {
+            border-color: rgba(0, 0, 0, 0) $primary-color rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+          }
+
+          &.rdrNextButton i {
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) $primary-color;
+          }
+        }
+
+        .rdrMonthAndYearWrapper {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $xl) {
+    .input{
+      &::before{
+        width: 20px;
+      }
+    }
+  }
+}

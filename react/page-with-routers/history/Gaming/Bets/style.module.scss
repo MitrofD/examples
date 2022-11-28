@@ -1,0 +1,66 @@
+@import '~assets/styles/vars';
+
+.root {
+  width: 800px;
+
+  .title {
+    color: #2BE8FC;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  table {
+    margin-top: 30px;
+
+    tr td {
+      .user {
+        align-items: center;
+        display: flex;
+
+        .avatar {
+          $size: 30px;
+
+          border-radius: $border-radius * 0.5;
+          overflow: hidden;
+          height: $size;
+          position: relative;
+          width: $size;
+
+          img {
+            position: relative;
+          }
+
+          &::before {
+            background-image: url("#{$images-path}/profile/avatar-default.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
+        }
+
+        //.info {
+        //  margin-left: 15px;
+        //}
+      }
+    }
+  }
+
+  :global(.simplebar-track.simplebar-horizontal) {
+    bottom: -12px !important;
+  }
+  :global(.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before) {
+    background-color: #0c0e15;
+  }
+
+  @media screen and (max-width: $md) {
+    width: auto;
+  }
+}

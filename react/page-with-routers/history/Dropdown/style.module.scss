@@ -1,0 +1,74 @@
+@import '~assets/styles/vars';
+
+.root {
+  display: inline-block;
+  position: relative;
+
+  .input,
+  .dropdown {
+    min-width: 247px;
+  }
+
+  .input {
+    font-size: 17px;
+    padding-right: 34px;
+
+    &::after {
+      background-image: url("#{$images-path}/icons/dark-arrow-down.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: block;
+      height: 100%;
+      right: 13px;
+      position: absolute;
+      top: 0;
+      transition: transform $animation-duration ease-in-out;
+      width: 12px;
+    }
+  }
+
+  ul.dropdown {
+    border-radius: $border-radius * 0.5;
+    color: $body-color;
+    font-size: 16px;
+    font-weight: 600;
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 50px;
+    z-index: 1;
+    width: 100%;
+
+    li.item {
+      background-color: $advanced-color;
+
+      a {
+        border-top: 2px solid $body-color;
+        display: block;
+        line-height: 42px;
+        padding: 0 11px;
+      }
+
+      &:first-child a {
+        border-top: 0;
+      }
+    }
+  }
+
+  &.active .input::after {
+    transform: rotateZ(-180deg);
+  }
+  @media screen and (max-width: $xl) {
+    .input{
+      line-height: 40px;
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    margin-bottom: 15px;
+  }
+}

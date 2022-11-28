@@ -1,0 +1,401 @@
+@import '~assets/styles/vars';
+
+.root {
+  padding: 23px 30px 48px 30px;
+
+  .fatalError {
+    color: $danger-color;
+    font-size: 22px;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .button {
+    background-color: $secondary-button-color;
+    border: none;
+    border-radius: $border-radius * 0.5;
+    color: $primary-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    outline: none;
+    overflow: hidden;
+    min-width: 117px;
+    padding: 7px 15px 9px 15px;
+    text-align: center;
+    text-overflow: ellipsis;
+    transition: opacity $animation-duration ease-in-out;
+    white-space: nowrap;
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  .top {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 44px;
+
+    .avatar,
+    .general,
+    .advanced {
+      width: 100%;
+    }
+
+    .avatar {
+      padding-left: 68px;
+      text-align: center;
+
+      .image {
+        $size: 88px;
+
+        height: $size;
+        margin: 0 auto;
+        width: $size;
+      }
+
+      label {
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 32px;
+        margin-top: 4px;
+        transition: opacity $animation-duration ease-in-out;
+
+        &.disabled {
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+      }
+
+      .info {
+        color: $secondary-color;
+        font-size: 17px;
+        line-height: 20px;
+        margin-top: 6px;
+      }
+    }
+
+    .general,
+    .advanced {
+      font-size: 17px;
+      line-height: 1;
+
+      .item {
+        display: flex;
+        margin-top: 20px;
+
+        .prop {
+          color: $primary-color;
+        }
+
+        .value {
+          color: $secondary-color;
+          margin-left: 11px;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .general {
+      padding-left: 164px;
+    }
+
+    .advanced {
+      padding-left: 178px;
+    }
+  }
+
+  .error {
+    color: $danger-color;
+    margin-bottom: 25px;
+  }
+
+  table.list {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .bottom {
+    margin-top: 31px;
+
+    table {
+      border-collapse: collapse;
+      overflow: hidden;
+      margin-top: 30px;
+      max-width: 100%;
+
+      tr {
+        font-size: 0;
+
+        td {
+          font-size: 17px;
+          padding: 29px 0 0 25px;
+
+          a {
+            color: #2BE8FC;
+            display: block;
+            letter-spacing: 0.03em;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+
+          &:first-child {
+            padding-left: 0;
+            white-space: nowrap;
+          }
+        }
+
+        &:first-child td {
+          padding-top: 0;
+        }
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.previewModal {
+  max-width: 744px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+
+@media screen and (max-width: $xxl) {
+  .root {
+    padding: 22px 25px 40px 25px;
+
+    .top {
+      margin-bottom: 30px;
+
+      .avatar {
+        .image {
+          $size: 66px;
+          height: $size;
+          width: $size;
+        }
+
+        label {
+          font-size: 15px;
+          line-height: 27px;
+        }
+
+        .info {
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+
+      .general,
+      .advanced {
+        font-size: 14px;
+        line-height: 27px;
+
+        .item {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    table.list {
+      font-size: 14px;
+      line-height: 27px;
+    }
+
+    .bottom {
+      margin-top: 25px;
+
+      table {
+        margin-top: 25px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        tr {
+          td {
+            font-size: 14px;
+            padding: 29px 0 0 25px;
+
+            a {
+              color: #2BE8FC;
+              display: block;
+              letter-spacing: 0.03em;
+
+              &:hover {
+                color: $primary-color;
+              }
+            }
+
+            .button{
+              font-size: 12px;
+              padding: 7px 26px;
+              min-width: 97px;
+            }
+
+            &:first-child {
+              padding-left: 0;
+              white-space: nowrap;
+            }
+          }
+
+          &:first-child td {
+            padding-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $xl) {
+  .root {
+    padding: 20px 20px 32px 20px;
+
+    .top {
+      margin-bottom: 25px;
+
+      .avatar {
+        .image {
+          $size: 52px;
+          height: $size;
+          width: $size;
+        }
+
+        label {
+          line-height: 22px;
+        }
+
+        .info {
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+
+
+      .general,
+      .advanced {
+        font-size: 14px;
+        line-height: 22px;
+
+        .item {
+          margin-top: 5px;
+        }
+      }
+
+      .avatar,
+      .general,
+      .advanced {
+        padding: 0 20px;
+      }
+    }
+
+    table.list {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: $lg) {
+  .root {
+
+    .top {
+      margin-bottom: 20px;
+
+      .avatar {
+
+        .image {
+          $size: 50px;
+          height: $size;
+          width: $size;
+        }
+
+        label {
+          font-size: 14px;
+        }
+      }
+
+      .avatar,
+      .general,
+      .advanced {
+        padding: 0 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .root{
+    .top{
+      flex-direction: column;
+
+      .avatar {
+        margin-bottom: 25px;
+        label {
+          font-size: 16px;
+        }
+
+        .info{
+          font-size: 14px;
+        }
+      }
+
+      .avatar,
+      .general,
+      .advanced {
+        font-size: 16px;
+        line-height: 120%;
+        padding: 0;
+
+        .item {
+          margin-top: 10px;
+        }
+      }
+      .advanced{
+        margin-top: 10px;
+      }
+    }
+
+    .bottom{
+      table{
+        margin-top: 30px;
+        tr{
+          display: flex;
+          flex-direction: column;
+
+          td{
+            padding-left: 0;
+            margin-top: 10px;
+
+            &:first-child{
+              margin-top: 0;
+              white-space: normal;
+
+            }
+          }
+        }
+      }
+    }
+
+    table.list {
+      font-size: 14px;
+    }
+  }
+}

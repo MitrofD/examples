@@ -1,0 +1,42 @@
+@import '~assets/styles/vars';
+
+table.list tr {
+  th.direction,
+  td.direction, {
+    text-align: center;
+    padding-right: 15px;
+  }
+
+  td.direction {
+    text-align: center;
+
+    .higher,
+    .lower {
+      $size: 19px;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      height: $size;
+      width: $size;
+    }
+
+    .higher {
+      background-image: url("#{$images-path}/icons/caret-up-green.svg");
+    }
+
+    .lower {
+      background-image: url("#{$images-path}/icons/caret-up-red.svg");
+      transform: rotateZ(-180deg);
+    }
+  }
+
+  td.win {
+    color: $success-button-color;
+  }
+
+  td.lose {
+    color: $danger-button-color;
+  }
+}

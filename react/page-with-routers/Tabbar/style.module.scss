@@ -1,0 +1,65 @@
+@import '~assets/styles/vars';
+
+.profile,
+.history,
+.general,
+.banking,
+.security {
+  .icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.profile .icon {
+  background-image: url("#{$images-path}/tabbar/icons/profile.svg");
+  background-position: center 9px;
+  width: 24px;
+}
+
+.profile:hover .icon,
+.profileTab .profile .icon {
+  background-image: url("#{$images-path}/tabbar/icons/profile-active.svg");
+}
+
+.history .icon {
+  background-image: url("#{$images-path}/tabbar/icons/history.svg");
+  background-position: center 14px;
+  width: 21px;
+}
+
+.history:hover .icon,
+.historyTab .history .icon {
+  background-image: url("#{$images-path}/tabbar/icons/history-active.svg");
+}
+
+.general .icon {
+  background-image: url("#{$images-path}/tabbar/icons/general/support.svg");
+  background-position: center;
+  width: 28px;
+}
+
+.banking .icon {
+  background-image: url("#{$images-path}/tabbar/icons/banking.svg");
+  background-position: center 13px;
+  width: 28px;
+}
+
+.banking:hover .icon,
+.bankingTab .banking .icon {
+  background-image: url("#{$images-path}/tabbar/icons/banking-active.svg");
+}
+
+.security .icon {
+  background-image: url("#{$images-path}/tabbar/icons/security.svg");
+  background-position: center 14px;
+  width: 21px;
+}
+
+.security:hover .icon,
+.securityTab .security .icon {
+  background-image: url("#{$images-path}/tabbar/icons/security-active.svg");
+}

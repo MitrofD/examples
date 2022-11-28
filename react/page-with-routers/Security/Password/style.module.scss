@@ -1,0 +1,73 @@
+@import '~assets/styles/vars';
+
+.root {
+  $border-radius: $border-radius * 0.5;
+
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+
+  .control {
+    margin-top: 17px;
+
+    label {
+      color: $secondary-color;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    input {
+      background-color: $advanced-color;
+      border: none;
+      border-radius: $border-radius;
+      color: $body-color;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: 45px;
+      outline: none;
+      padding: 0 25px;
+      width: 247px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  button {
+    background-color: $success-button-color;
+    border: none;
+    border-radius: $border-radius;
+    color: $primary-color;
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: inherit;
+    outline: none;
+    line-height: 37px;
+    margin-top: 33px;
+    min-width: 159px;
+    padding: 0 45px;
+  }
+
+  @media screen and (max-width: $xl) {
+    font-size: 14px;
+    line-height: 1;
+
+    .control {
+      margin-top: 15px;
+
+      label{
+        margin-bottom: 5px;
+      }
+
+      input{
+        line-height: 38px;
+        padding: 0 15px;
+      }
+    }
+
+    button{
+      margin-top: 25px;
+    }
+  }
+}

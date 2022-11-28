@@ -1,0 +1,291 @@
+@import '~assets/styles/vars';
+
+:import('./Tabbar/style.module.scss') {
+  appProfileTab: profileTab;
+  appSecurityTab: securityTab;
+  appHistoryTab: historyTab;
+  appBankingTab: bankingTab;
+}
+
+;
+
+.root {
+  font-family: "Barlow", Arial, Helvetica, sans-serif;
+  height: 100%;
+  position: absolute;
+  padding-left: $left-column-width + $column-space;
+  top: 0;
+  width: 100%;
+
+  .inner {
+    background-color: $content-color;
+    border-top-left-radius: $border-radius;
+    height: inherit;
+    padding: 26px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+
+      .menu {
+        flex-shrink: 0;
+        padding: 0;
+        width: 100%;
+
+        ul {
+          padding: 0;
+        }
+
+        li.item {
+          display: inline-block;
+          font-weight: 600;
+          line-height: 32px;
+          margin: 0;
+          position: relative;
+
+          a,
+          span {
+            cursor: pointer;
+            color: $secondary-color;
+            display: block;
+            padding: 10px 40px 20px 40px;
+          }
+
+          a {
+            margin-bottom: -$border-radius;
+          }
+
+          a.active,
+          &:hover > a {
+            background-color: $body-color;
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+            color: $primary-color;
+          }
+
+          &:first-child a {
+            padding-left: 43px;
+            padding-right: 41px;
+          }
+
+          &:nth-child(2) a {
+            padding-left: 29px;
+            padding-right: 27px;
+          }
+
+          &:nth-child(3) a {
+            padding-left: 34px;
+            padding-right: 32px;
+          }
+
+          &:hover ul.submenu {
+            background-color: $content-color;
+            display: block;
+            position: absolute;
+            z-index: 1;
+          }
+        }
+
+        ul.submenu {
+          background-color: $content-color;
+          display: none;
+          width: 100%;
+
+          li.item {
+            display: block;
+            line-height: normal;
+            min-width: 100%;
+
+            a.active,
+            &:hover a {
+              background-color: rgba(0, 0, 0, 0);
+            }
+          }
+        }
+      }
+
+      .data {
+        background-color: $body-color;
+        border-radius: $border-radius;
+        height: 100%;
+        overflow: auto;
+        position: relative;
+      }
+    }
+  }
+
+  @media screen and (max-width: $xxl) {
+    padding-left: $xxl-left-column-width + $xxl-column-space;
+
+    .inner {
+      font-size: 14px;
+
+      .content {
+        .menu {
+          li.item {
+            line-height: 30px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .submenu {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $xl) {
+    padding-left: $xl-left-column-width + $xl-column-space;
+
+    .inner {
+      padding: 17px;
+      border-top-left-radius: $xl-border-radius;
+
+      .content {
+        .menu {
+          li.item {
+            line-height: 18px;
+
+            a, span {
+              cursor: pointer;
+              color: $secondary-color;
+              display: block;
+              padding: 10px 40px 20px 40px;
+            }
+
+            a {
+              margin-bottom: -$xl-border-radius;
+            }
+
+            &:first-child a, &:nth-child(2) a, &:nth-child(3) a {
+              padding-left: 25px;
+              padding-right: 25px;
+            }
+
+            a.active,
+            &:hover > a {
+              border-top-left-radius: $xl-border-radius;
+              border-top-right-radius: $xl-border-radius;
+            }
+          }
+        }
+
+        .data {
+          border-radius: $xl-border-radius;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $lg) {
+    .inner {
+      padding: 17px;
+
+      .content {
+        .menu {
+          li.item {
+            line-height: 18px;
+
+            a, span {
+              padding: 10px 30px 20px 30px
+            }
+
+            a {
+              margin-bottom: -$xl-border-radius;
+            }
+
+            &:first-child a, &:nth-child(2) a, &:nth-child(3) a {
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $md) {
+    padding-left: 0;
+    .inner {
+      padding: 15px;
+
+      .content {
+        .menu {
+          li.item {
+
+            a, span {
+              padding: 10px 18px 20px 18px
+            }
+
+            &:first-child a, &:nth-child(2) a, &:nth-child(3) a {
+              padding-left: 18px;
+              padding-right: 18px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  @media screen and (max-width: $sm) {
+    .inner {
+      border-radius: 0;
+      padding: 0;
+
+      .content {
+        background-color: #323E69;
+
+        .menu {
+          padding: 6px 20px 0 20px;
+
+          li.item {
+            display: none;
+            font-size: 14px;
+            line-height: 1;
+          }
+        }
+
+        .data {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+/* ==== TABS BEGIN ==== */
+// Profile
+.appProfileTab .root .inner .content .menu li.profile,
+.appSecurityTab .root .inner .content .menu li.security {
+  display: inline-block;
+
+  a {
+    background: none;
+    font-size: 16px;
+    padding: 7px 0 17px;
+  }
+}
+
+// History
+.appHistoryTab .root .inner .content .menu li.history {
+  display: inline-block;
+
+  a {
+    padding-bottom: 16px;
+  }
+}
+
+// Banking
+.appBankingTab .root .inner .content .menu li.banking {
+  display: inline-block;
+
+  a {
+    padding-bottom: 16px;
+  }
+}
+
+/* ==== TABS ENDED ==== */

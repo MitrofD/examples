@@ -1,0 +1,41 @@
+@import '~assets/styles/vars';
+
+.root {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  position: relative;
+
+  .error {
+    color: $danger-color;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      margin-top: 20px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &.loading {
+    height: 300px;
+  }
+
+  @media screen and (max-width: $xl) {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  @media screen and (max-width: $sm) {
+    ul {
+      li {
+        margin-top: 15px;
+      }
+    }
+  }
+}
